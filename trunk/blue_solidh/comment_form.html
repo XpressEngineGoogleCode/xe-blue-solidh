@@ -8,35 +8,16 @@
 	<input type="hidden" name="comment_srl" value="{$oComment->get('comment_srl')}" />
 	<input type="hidden" name="content" value="{htmlspecialchars($oComment->get('content'))}" />
 	<input type="hidden" name="parent_srl" value="{$oComment->get('parent_srl')}" />
-	<input type="hidden" name="quote_content" value="{$quote_content}" />
-	
-	<table border="0" cellspacing="0" class="forumCategoryList">
-		<thead>
-			<tr class="rootCateg">
-				<td class="small">
-					<div class="first">
-						&nbsp;
-					</div>
-				</td>
-				<td class="large">
-					<div class="middle center">
-						Quote
-					</div>
-				</td>
-				<td class="small">
-					<div class="last">
-						&nbsp;
-					</div>
-				</td>
-			</tr>
-		</thead>
+	<input type="hidden" name="quote_content" value='{$quote_content}' />
+	<div class="noGap">
+	<table border="0" cellspacing="0" class="comment_quote_table threadWrite">
 		<tbody>
+			<tr class="tr_header">
+				<td colspan="2">Quote</td>
+			</tr>
 		<tr class="separator">
-			<td class="top small gF">
-				<label>{$lang->subject}</label>
-			</td>
 			<td colspan="2">
-				{html_entity_decode($quote_content)}
+				<div class="quote_content">{html_entity_decode($quote_content)}</div>
 				{$oComment->getEditor()}
 			</td>
 		</tr>
@@ -74,23 +55,21 @@
 			</td>
 		</tr>
 		<!--@end-->
-		<tr class="separator">
-			<td class="top small gF">
-				<label for="notify_message">{$lang->notify}</label>
-			</td>
-			<td colspan="2">
-				<input type="checkbox" name="notify_message" value="Y" <!--@if($isNotified)-->checked="checked"<!--@end--> id="notify_message" class="inputCheck" />
-			</td>
-		</tr>
-		<tr class="separator">
-			<td class="top small gF">
-			</td>
-			<td colspan="2">
-				<a href="" onclick="jQuery('#fr_quote').submit();return false;" class="forumButton blue commentAdd"><span class="outer"><span class="inner">{$lang->cmd_comment_registration}</span></span></a>
+
+		<tr class="single_line">
+			<td colspan="2" class="td_submit" style="padding:10px">
+				<div style="text-align:left">
+					<a href="" onclick="jQuery('#fr_quote').submit();return false;" class="button blue"><span>{$lang->cmd_comment_registration}</span></a>
+				</div>
 			</td>
 		</tr>
 		</tbody>
 	</table>
+	</div>
+	<div class="table_ctrlbar blankIE">
+	<div class="ctrlbar_right"><span style="font-size:0;line-height:0; width:0;height:0;"></span></div><!-- //ctrlbar_right -->
+	</div> <!-- //table_ctrlbar -->
+
 </form>
 
 
