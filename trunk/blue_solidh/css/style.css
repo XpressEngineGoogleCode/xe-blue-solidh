@@ -25,7 +25,7 @@ ul, li, dl,dt,dd				{margin:0;padding:0; list-style:none;}
 
 .forum_table .tr_header			{height:35px; background:url(../images/category_th_bg.gif) repeat-x top left;}
 .forum_table th					{padding-bottom:1px; margin:0;color:#494949; font-weight:bold; text-align:center;}
-.forum_table .th_first			{text-align:left !important; padding-left: 18px;}	
+.forum_table .th_first			{text-align:left !important; padding-left: 18px;}
 .forum_table th a				{color:#494949;text-decoration:none;}
 .forum_table td					{vertical-align:middle;text-align:center;color:#737373;}
 .forum_table .tr_title_lv_1		{height:70px; padding-left:}
@@ -112,7 +112,7 @@ ul, li, dl,dt,dd				{margin:0;padding:0; list-style:none;}
 .threadWrite						{width:100%;float:right;border:#c1c1c1 solid 1px;}
 .threadWrite .tr_header				{font-weight:bold;text-align:center;background:url('../images/editor_head_bg.gif') repeat-x top left;height:32px;}
 .threadWrite .single_line			{height:40px;}
-.threadWrite .td_col1				{padding-left:10px;}
+.threadWrite .td_col1				{padding-left:10px;text-align:left;width:15px}
 .threadWrite .td_col2				{padding-right:10px;}
 .threadWrite .inputText				{width:450px;height:20px;border:#C1C1C1 solid 1px;}
 .threadWrite .td_submit				{text-align:center;}
