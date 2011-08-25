@@ -33,7 +33,7 @@
 			<td class="col2">Posted: {$oDocument->getRegdate('d-M-Y h:i a')}</td>
 		</tr>
 		<tr class="tr_thread_content">
-			<td class="col1">
+			<td class="col1" style="border-right:1px solid #E5E5E5">
 				<div class="user_info">
 				<!--@if($module_info->display_author!='N')-->
 					<!--@if(!$oDocument->getMemberSrl())-->
@@ -52,41 +52,34 @@
 					<!--@else-->
 						<div class="user_img"><img src="images/avatar.jpg" alt="USER" ></div>
 					<!--@end-->
-
-
-
 					<!--@if($grant->manager || $module_info->display_ip_address!='N')-->
 					<dl class="u_posts"><span>{$lang->ip}:</span>&nbsp;<span>{$oDocument->getIpaddress()}</span></dl>
 					<!--@end-->
-
-
 					<dl class="u_regdate"><span>{$lang->registered}:</span>&nbsp;<b>{$oDocument->getRegdate('m/d/Y')}</b></dl>
 				</div>
 			</td>
 			<td class="col2">
 				<p class="post_text">{html_entity_decode($oDocument->getContentText())}</p>
-			</td>
-		</tr>
-		<tr class="tr_thread_control">
-			<td colspan="2" >
-
-				<!--@if($oDocument->hasUploadedFiles())-->
-				<div class="attachment">
-					<label>{$lang->uploaded_file}:</label>
-
+				<div class="attachment" style="padding-bottom:10px">
+					<!--@if($oDocument->hasUploadedFiles())-->
 					{@ $uploaded_list = $oDocument->getUploadedFiles() }
 					<ul class="filesList">
 						<!--@foreach($uploaded_list as $key => $file)-->
 						<li>
-							<a href="{getUrl('')}{$file->download_url}">
-								{$file->source_filename}
-								<span class="bubble">[{$lang->file_size}:{FileHandler::filesize($file->file_size)}/{$lang->download}:{number_format($file->download_count)}]</span>
+							<a href="{getUrl('')}{$file->download_url}"  style="text-decoration:none">
+								<img src="images/common/bullet.png" border="0"/>&nbsp;&nbsp;{$file->source_filename}
 							</a>
 						</li>
 						<!--@end-->
 					</ul>
 					<!--@end-->
 				</div>
+			</td>
+		</tr>
+		<tr class="tr_thread_control">
+			<td colspan="2" >
+
+
 
 				<div class="btns">
 					<!--@if($oDocument->isEditable())-->
