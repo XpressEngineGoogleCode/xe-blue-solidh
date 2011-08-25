@@ -2,14 +2,12 @@
 
 	{@ $_comment_list = $oDocument->getComments() }
 	<!--@foreach($_comment_list as $key => $comment)-->
-
-
 		<tr class="tr_thread_meta">
 			<td class="col1"><a href="#popup_menu_area" class="member_{$comment->member_srl}" onclick="return false">{$comment->getNickName()}</a></td>
 			<td class="col2">{$lang->post_date}: {$comment->getRegdate('Y.d.m')}</td>
 		</tr>
 		<tr class="tr_thread_content">
-			<td class="col1">
+			<td class="col1" style="border-right:1px solid #E5E5E5">
 				<div class="user_info">
 					<h4 class="forum_blue"><a href="#popup_menu_area" class="forum_blue member_{$comment->member_srl}" onclick="return false">{$comment->getNickName()}</a></h4>
 					<div class="user_img">
@@ -19,9 +17,6 @@
 					<img src="images/avatar.jpg" alt="USER" />
 					<!--@end-->
 					</div>
-
-
-
 					<!--<dl class="u_group"><dt>Group</dt><dd class="fwB">Administrator</dd></dl> -->
 					<!--@if($grant->manager || $module_info->display_ip_address!='N')-->
 					<dl class="u_posts"><span>{$lang->ip}:</span><span>{$comment->getIpaddress()}</span></dl>
@@ -31,30 +26,24 @@
 			</td>
 			<td class="col2">
 				<div class="post_text">{html_entity_decode($comment->getContentText())}</div>
-			</td>
-		</tr>
-		<tr class="tr_thread_control">
-			<td colspan="2" >
-
-
-
+				<div class="attachment" style="padding-bottom:10px">
 				<!--@if($comment->hasUploadedFiles())-->
-				<div class="attachment">
-					<label>{$lang->uploaded_file}:</label>
-
 					{@ $_uploaded_files = $comment->getUploadedFiles() }
 					<ul class="filesList">
 						<!--@foreach($_uploaded_files as $key => $file)-->
 						<li>
-							<a href="{getUrl('')}{$file->download_url}">
-								{$file->source_filename}
+							<a href="{getUrl('')}{$file->download_url}" style="text-decoration:none">
+								<img src="images/common/bullet.png" border="0"/>&nbsp;&nbsp;{$file->source_filename}
 							</a>
 						</li>
 						<!--@end-->
 					</ul>
 				<!--@end-->
 				</div>
-
+			</td>
+		</tr>
+		<tr class="tr_thread_control">
+			<td colspan="2" >
 				<div class="btns">
 					<!--@if($comment->isGranted() || !$comment->get('member_srl'))-->
 					<a href="{getUrl('act','dispForumDeleteComment','comment_srl',$comment->comment_srl)}" class="button blue" ><span>{$lang->cmd_delete}</span></a>
