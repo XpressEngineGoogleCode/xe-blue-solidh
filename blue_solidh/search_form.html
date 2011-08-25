@@ -1,0 +1,45 @@
+
+	<div class="ctrlbar_right">
+		<!--@if($is_logged || $module_info->allow_anonymous_search==Y)-->
+		<form action="{getUrl()}" method="get" onsubmit="return procFilter(this, search)" id="fo_search" class="forumSearchForm">
+
+
+
+			<!--@if($vid)-->
+			<input type="hidden" name="vid" value="{$vid}" name="searchIn"/>
+			<!--@end-->
+			<input type="hidden" name="mid" value="{$mid}" />
+			<input type="hidden" name="category" value="{$category}" />
+			<input type="hidden" name="search_target" value="title" />
+
+			<div class="search">
+				<input type="text" class="search_keyword" name="search_keyword" size="15" accesskey="S" placeholder="search" value="{htmlspecialchars($search_keyword)}"  title="{$lang->cmd_search}" />
+				<input type="image" class="search_submit" src="images/search_submit.gif" />
+				<input name="search_target" type="hidden" value="title"/>
+			</div><!-- // search -->
+
+		</form>
+		<!--@else-->
+			<div class="search">
+				<input type="text" class="search_keyword" disabled="disabled" size="15" placeholder="search" />
+				<a href="#" class="btn_sesrch" onclick="xGetElementById('fo_search').submit();return false;" ><img src="images/search_submit.gif" width="14" height="14" alt="search"></a>
+				<!-- <input type="image" class="search_submit" src="images/search_submit.gif" /> -->
+			</div><!-- // search -->
+			<script type="text/javascript">
+				//<![CDATA[
+				$(
+					var message = "{$lang->search_message1} {$lang->login}<br />{$lang->search_message2}";
+					jQuery('.search_keyword').CreateBubblePopup({
+							position : 'top',align:'center',
+							innerHtml: message,
+							innerHtmlStyle: {color:'#FFFFFF', 'text-align':'center'},
+							themeName: 	'all-black',
+							themePath: 	'{$tpl_path}/images/popup-theme'
+					});
+				)
+
+				//]]>
+			</script>
+		<!--@end-->
+
+	</div><!-- //ctrlbar_right -->
