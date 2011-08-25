@@ -24,7 +24,7 @@ count($notice_list) = number of stickys
 					<th class="th_title" scope="col" colspan="3">
 						<!--@if($grant->manager || $grant->moderator)--><input type="checkbox" onclick="XE.checkboxToggleAll({ doClick:true }); return false;" /><!--@end-->
 					</th>
-					<th class="th_last"></th>
+					<th class="th_last" style="width:100%; padding-left:10px">Threads</th>
 				<!--@elseif($total_count !== 0)-->
 				<!--@ $columnCount=count($list_config)+1;--><!--@end-->
                 <th class="th_title" scope="col">

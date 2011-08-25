@@ -59,7 +59,8 @@
 				{$lang->by} <span class="forum_blue">{$val->last_author}&nbsp;</span><br  />Posted: {zdate($val->last_update,'Y-m-d')} <br />
 				<a href="{getUrl('mid','','document_srl', $val->last_document,'cpage','')}#comment_{$val->last_post}">{$lang->latest_post}</a>
 				<!--@end-->
-				
+			<!--@else-->
+				No Threads
 			<!--@end --></td>
 			
 			
