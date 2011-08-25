@@ -11,23 +11,23 @@
 <table border="0" cellspacing="0" cellpadding="0" class="threadWrite">
 	<caption class="blind">{$lang->write_new_thread}</caption>
 	<colgroup>
-		<col width="15%" />
+		<col width="10%" />
 		<col width="" />
 	</colgroup>
-	
+
 	<tbody>
 
 	<tr class="tr_header">
 		<td colspan="2">{$lang->write_new_thread}</td>
 	</tr>
 	<tr class="single_line">
-		<th class="td_col1"><label for="title_post">{$lang->title} :</label></th>
+		<th class="td_col1"><label for="title_post">{$lang->title} </label></th>
 		<td class="td_col2">
 			<input type="text" name="title" class="inputText" value="{htmlspecialchars($oDocument->getTitleText())}" id="title_post"/>
 		</td>
 	</tr>
 	<tr class="single_line">
-		<th class="td_col1"><label for="category_srl">{$lang->category} :</label></th>
+		<th class="td_col1"><label for="category_srl">{$lang->category} </label></th>
 		<td class="td_col2">
 			<select name="category_srl" class="select" id="category_srl">
 				<option value="">{$lang->category}</option>
@@ -52,29 +52,31 @@
 				<input type="checkbox" name="notify_message" value="Y" <!--@if($isNotified)-->checked="checked"<!--@end--> id="notify_message" class="inputCheck" />
 
 			<!--@endif-->
-			
+
 		</td>
 	</tr>
 	<tr class="multi_line">
-		<th class="td_col1"><label>{ucfirst($lang->message)} :</label></th>
-		<td class="td_col2">{$oDocument->getEditor()}</td>
+		<td class="td_col2" colspan="2" style="padding:0px 10px 0px 10px;">{$oDocument->getEditor()}</td>
 	</tr>
 	<tr class="single_line">
-		<td colspan="2" class="td_submit">
-			<!--@if($is_logged)-->
+		<td colspan="2" class="td_submit" style="padding:10px">
+			<div style="text-align:left">
+				<!--@if($is_logged)-->
 
-			<a href="#" class="button blue" onclick="doDocumentSave(this); return false;" ><span>{$lang->cmd_temp_save}</span></a>
-			<a href="#" class="button blue" onclick="doDocumentLoad(this); return false;" ><span >{$lang->cmd_load}</span></a>
+				<a href="#" class="button blue" onclick="doDocumentSave(this); return false;" ><span>{$lang->cmd_temp_save}</span></a>
+				<a href="#" class="button blue" onclick="doDocumentLoad(this); return false;" ><span >{$lang->cmd_load}</span></a>
 
-			<!--@end-->
-			<a href="#" class="button red" onclick="jQuery('#fo_write').submit();return false;" ><span>{$lang->cmd_registration}</span></a>
-			<span class="button"><input type="button" value="{$lang->cmd_back}" onclick="location.href='{getUrl('act','')}'" /></span>
+				<!--@end-->
+				<a href="#" class="button red" onclick="jQuery('#fo_write').submit();return false;" ><span>{$lang->cmd_registration}</span></a>
+				<span class="button"><input type="button" value="{$lang->cmd_back}" onclick="location.href='{getUrl('act','')}'" /></span>
+
+			</div>
 		</td>
 	</tr>
 
 
 	<!--@if(count($extra_keys))-->
-	
+
 	<!--@foreach($extra_keys as $key => $val)-->
 	<tr class="single_line tr_extra">
 		<th>{$val->name} <!--@if($val->is_required=='Y')--><em>*</em><!--@end--></th>
@@ -91,6 +93,6 @@
 <div class="table_ctrlbar">
 	<div class="ctrlbar_right"><span></span></div><!-- //ctrlbar_right -->
 </div> <!-- //table_ctrlbar -->
-<!--#include("_footer.html")-->
 
+<!--#include("_footer.html")-->
 </div>

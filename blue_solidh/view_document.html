@@ -55,15 +55,6 @@
 
 
 
-					<!--
-					<dl class="u_group"><dt>Group</dt><dd class="fwB">
-						<!--@foreach($member_info->group_list as $key => $val)-->{$val} <!--@end-->
-						</dd>
-					</dl>
-					-->
-
-
-
 					<!--@if($grant->manager || $module_info->display_ip_address!='N')-->
 					<dl class="u_posts"><span>{$lang->ip}:</span>&nbsp;<span>{$oDocument->getIpaddress()}</span></dl>
 					<!--@end-->
@@ -228,7 +219,7 @@
 
 
 </table>
-<div style="margin-top:10px"><a href="#" class="button blue" onclick="jQuery('#forumEditor').submit();return false;" ><span>{$lang->cmd_comment_registration}</span></a></div>
+<div style="margin-top:10px;float:left"><a href="#" class="button blue" onclick="jQuery('#forumEditor').submit();return false;" ><span>{$lang->cmd_comment_registration}</span></a></div>
 </form>
 <!--@end-->
 
