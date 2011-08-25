@@ -71,7 +71,7 @@ ul, li, dl,dt,dd				{margin:0;padding:0; list-style:none;}
 .viewDocument						{width:100%;float:left;position:relative;}
 .viewDocument .writeNewThread		{position:absolute;right:10px;top:5px;}
 .thread_table						{width:100%;border-left:#bbb solid 1px;border-right:#bbb solid 1px; }
-.thread_table .thread_caption		{width:100%;height:35px;border:#bbb solid 1px; border-bottom:none;background:url(../images/thread_head_bg.gif) no-repeat top right;}
+
 .thread_table .thread_caption span	{width:90%;height:25px;padding:9px 0 0 20px;font-weight:bold;display:block;text-align:left;float:left;background:url(../images/thread_head_bg.gif) no-repeat left top;}
 .thread_table h4					{margin:0; padding:0;}
 
@@ -104,7 +104,17 @@ ul, li, dl,dt,dd				{margin:0;padding:0; list-style:none;}
 .tr_thread_exvar .col1				{border-right:1px solid #C5C6CA;padding-right:20px; text-align:right;}
 .tr_thread_exvar .col2				{padding-left:20px;}
 
+.quote_content						{}
 
+.quoteTitle 						{font-style: italic;margin: 0 0 5px;}
+.quote_content						{margin:10px;}
+.quote_content .quote				{border:#CECECE solid 1px; padding:5px;}
+.comment_quote_table .xpress-editor {margin:10px}
+.comment_quote_table				{width:100%;float:left !important;border-left:#bbb solid 1px;border-right:#bbb solid 1px;}
+.comment_quote_table .tr_header		{font-weight:bold;text-align:center;background:url('../images/editor_head_bg.gif') repeat-x top left;height:32px;}
+.thread_table .thread_caption		{width:100%;height:35px;border:#bbb solid 1px; border-bottom:none;background:url(../images/thread_head_bg.gif) no-repeat top right;}
+.blankIE							{_margin-top:-20px;}
+.noGap								{float:left;}
 .commentEditor						{width:100%;float:left;border:#c1c1c1 solid 1px;margin-top:30px;}
 .commentEditor th					{background:url('../images/editor_head_bg.gif') repeat-x top left;height:32px;}
 .commentEditor td					{text-align:center;padding:10px;}
@@ -120,7 +130,9 @@ ul, li, dl,dt,dd				{margin:0;padding:0; list-style:none;}
 .threadWrite .tr_extra				{border-top:#C1C1C1 solid 1px;}
 .threadWrite .tr_extra th			{border-top:#C1C1C1 solid 1px;border-right:#C1C1C1 solid 1px;}
 .threadWrite .tr_extra td			{padding:10px;border-top:#C1C1C1 solid 1px;}
-.threadWrite .
+
+
+
 
 /* list_chirdren */
 #topic								{width:100%;float:left;}
